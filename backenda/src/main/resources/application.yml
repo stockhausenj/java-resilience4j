@@ -1,0 +1,12 @@
+spring:
+    application.name: java-resilience4j
+    jackson.serialization.indent_output: true
+
+server:
+    port: 8080
+
+info:
+    name: ${spring.application.name}
+    description: resilience4j test
+    environment: ${spring.profiles.active}
+    version: 0.0.1
