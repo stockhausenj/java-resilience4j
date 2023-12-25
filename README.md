@@ -9,6 +9,6 @@ Experiment with resilience4j with spring-boot 3 on Java 17.
 
 ## Resilience4j Fault Tolerance Tests
 
-| module   | server   | description                                           |
-|----------|----------|-------------------------------------------------------|
-| retry    | backenda | REST request to server that hasn't started yet.       |
+| module   | server   | description                                                |
+|----------|----------|------------------------------------------------------------|
+| retry    | backenda | REST request to server that returns exception 50% of time. |
