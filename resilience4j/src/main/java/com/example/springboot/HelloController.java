@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 
 @RestController
 public class HelloController {
@@ -21,9 +22,10 @@ public class HelloController {
 		return response;
 	}
 
-    @GetMapping("/ratelimit")
+	@RateLimiter(name = "internal")
+    @GetMapping("/internal_ratelimit")
 	public String rateLimit() {
-        String response = helloService.backendARetry();
+        String response = "sheeeeesh";
 		return response;
 	}
 }
