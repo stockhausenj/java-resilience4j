@@ -15,9 +15,15 @@ public class HelloController {
         this.helloService = helloService;
     }
 
-	@GetMapping("/")
-	public String index() {
-        String response = helloService.getBackendA();
+	@GetMapping("/retry")
+	public String retry() {
+        String response = helloService.backendARetry();
+		return response;
+	}
+
+    @GetMapping("/ratelimit")
+	public String rateLimit() {
+        String response = helloService.backendARetry();
 		return response;
 	}
 }

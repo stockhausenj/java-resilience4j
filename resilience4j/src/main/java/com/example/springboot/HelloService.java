@@ -23,12 +23,12 @@ public class HelloService {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
     @Retry(name = "backenda")
-    public String getBackendA() {
+    public String backendARetry() {
         try {
-			ResponseEntity<String> quote = restTemplate.getForEntity(
-				"http://localhost:8080", String.class);
-			log.info(quote.toString());
-			return quote.toString();
+			ResponseEntity<String> servResponse = restTemplate.getForEntity(
+				"http://localhost:8080/retry", String.class);
+			log.info(servResponse.toString());
+			return servResponse.toString();
 		} catch (ResourceAccessException ex) {
 			throw ex;
 		}

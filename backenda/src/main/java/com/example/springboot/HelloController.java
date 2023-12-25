@@ -16,8 +16,8 @@ public class HelloController {
         return random.nextDouble() < 0.5; // 50% probability
     }
 	
-	@GetMapping("/")
-	public ResponseEntity index() {
+	@GetMapping("/retry")
+	public ResponseEntity retry() {
 		try {
             // Simulate an exception 50% of the time
             if (shouldThrowException()) {

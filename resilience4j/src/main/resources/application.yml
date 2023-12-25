@@ -14,7 +14,7 @@ info:
 resilience4j.retry:
     configs:
         default:
-            maxAttempts: 5
+            maxAttempts: 10
             waitDuration: 100
             retryExceptions:
                 - org.springframework.web.client.ResourceAccessException
