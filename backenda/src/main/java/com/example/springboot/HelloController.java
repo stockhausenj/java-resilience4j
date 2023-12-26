@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-	private boolean shouldThrowException() {
+    private boolean shouldThrowException() {
         Random random = new Random();
         return random.nextDouble() < 0.5; // 50% probability
     }
-	
-	@GetMapping("/retry")
-	public ResponseEntity retry() {
-		try {
+    
+    @GetMapping("/retry")
+    public ResponseEntity retry() {
+        try {
             // Simulate an exception 50% of the time
             if (shouldThrowException()) {
                 // Throw an exception (e.g., division by zero)
@@ -31,5 +31,5 @@ public class HelloController {
             // In case of an exception, return a 500 Internal Server Error
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred");
         }
-	}
+    }
 }

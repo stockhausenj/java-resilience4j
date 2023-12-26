@@ -25,12 +25,12 @@ public class HelloService {
     @Retry(name = "backenda")
     public String backendARetry() {
         try {
-			ResponseEntity<String> servResponse = restTemplate.getForEntity(
-				"http://localhost:8080/retry", String.class);
-			log.info(servResponse.toString());
-			return servResponse.toString();
-		} catch (ResourceAccessException ex) {
-			throw ex;
-		}
+            ResponseEntity<String> servResponse = restTemplate.getForEntity(
+                "http://localhost:8080/retry", String.class);
+            log.info(servResponse.toString());
+            return servResponse.toString();
+        } catch (ResourceAccessException ex) {
+            throw ex;
+        }
     }
 }

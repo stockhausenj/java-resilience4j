@@ -9,23 +9,23 @@ import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 @RestController
 public class HelloController {
 
-	private final HelloService helloService;
+    private final HelloService helloService;
 
-	@Autowired
+    @Autowired
     public HelloController(HelloService helloService) {
         this.helloService = helloService;
     }
 
-	@GetMapping("/retry")
-	public String retry() {
+    @GetMapping("/retry")
+    public String retry() {
         String response = helloService.backendARetry();
-		return response;
-	}
+        return response;
+    }
 
-	@RateLimiter(name = "internal")
+    @RateLimiter(name = "internal")
     @GetMapping("/internal_ratelimit")
-	public String rateLimit() {
+    public String rateLimit() {
         String response = "sheeeeesh";
-		return response;
-	}
+        return response;
+    }
 }
