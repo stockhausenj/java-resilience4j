@@ -13,7 +13,6 @@ Experiment with resilience4j with spring-boot 3 on Java 17.
 |-------------|--------------|--------------|-------------------------------------------------------|
 | Retry       | resilience4j | backenda     | Server returns xception 50% of time.                  |
 | RateLimiter | localhost    | resilience4j | Server endpoint protected by 1 req / 10s ratelimiter. |
-| RateLimiter | resilience4j | backenda     | Outgoing requests protected by rateLimiter.           |  
 
 ## Resilience4j Supplementary Notes
 [Official Documentation](https://resilience4j.readme.io/)
