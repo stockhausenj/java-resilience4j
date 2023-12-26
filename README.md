@@ -11,7 +11,7 @@ Experiment with resilience4j with spring-boot 3 on Java 17.
 
 | module      | client       | server       | description                                           |
 |-------------|--------------|--------------|-------------------------------------------------------|
-| Retry       | resilience4j | backenda     | Server returns xception 50% of time.                  |
+| Retry       | resilience4j | backenda     | Server returns exception 50% of time.                 |
 | RateLimiter | localhost    | resilience4j | Server endpoint protected by 1 req / 10s ratelimiter. |
 
 ## Resilience4j Supplementary Notes
